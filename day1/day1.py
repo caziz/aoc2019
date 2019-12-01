@@ -1,6 +1,8 @@
 def fuel_required(mass):
     fuel = (mass // 3) - 2
-    return 0 if fuel < 0 else fuel + fuel_required(fuel)
+    if fuel < 0:
+        return 0
+    return fuel + fuel_required(fuel)
 
 
 with open("input.txt") as f:
